@@ -46,16 +46,7 @@ client.connect().then(async () => {
 ```javascript
 import {client} from "client-query"
 
-const query = async ()=> {
-    return await client({
-        baseURL: "http://localhost:5000/",
-        headers: {
-            // Authorization: auth.getToken()
-        }
-    })
-}
-
-const db = query({
+const db = client({
         baseURL: "http://localhost:5000/",
         headers: {
             // Authorization: auth.getToken()
