@@ -1,13 +1,13 @@
 # Example
 
-```
+```shell
 $ npm install client-query
 ```
 
 
 ## server
 Set up express like the example below
-```
+```javascript
 const { MongoClient, ObjectId } = require("mongodb")
 const express = require("express")
 const {postRouter} = require("client-query")
@@ -43,7 +43,7 @@ client.connect().then(async () => {
 
 ## client
 
-```
+```javascript
 import {client} from "client-query"
 
 const query = async ()=> {
