@@ -1,0 +1,50 @@
+{
+  "name": "client-query",
+  "version": "0.1.0",
+  "description": "write mongodb queries in the client",
+  "main": "build/index.js",
+  "scripts": {
+    "dev": "watch 'npm run build' src",
+    "build": "babel src -d build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Mich5/client-query.git"
+  },
+  "keywords": [
+    "mongodb",
+    "query",
+    "aggregation",
+    "jamstack",
+    "serverless",
+    "clientside",
+    "cloud",
+    "functions"
+  ],
+  "author": "Micho Ngoma (https://micho.me/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Mich5/client-query/issues"
+  },
+  "homepage": "https://github.com/Mich5/client-query#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.3",
+    "babel-loader": "^8.2.2",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-latest": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "watch": "^1.0.2"
+  },
+  "dependencies": {
+    "axios": "^0.21.1"
+  }
+}
