@@ -66,7 +66,7 @@ const addEmployee =  async ()=> {
 }
 
 const getEmployees = async ()=> {
-  await db().find("members", {firstName:"John"}).then(results => {
+  await db().find("employees", {firstName:"John"}).then(results => {
       console.log(results)
   }).catch((err) => {
     console.log(err);
