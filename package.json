@@ -37,9 +37,7 @@
   "homepage": "https://github.com/Mich5/client-query#readme",
   "devDependencies": {
     "babel-cli": "^6.26.0",
-    "babel-core": "^6.26.3",
     "babel-loader": "^8.2.2",
-    "babel-polyfill": "^6.26.0",
     "babel-preset-es2015": "^6.24.1",
     "babel-preset-latest": "^6.24.1",
     "babel-preset-stage-0": "^6.24.1",
@@ -47,6 +45,8 @@
     "watch": "^1.0.2"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "babel-core": "^6.26.3",
+    "babel-polyfill": "^6.26.0"
   }
 }
