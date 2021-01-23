@@ -3,6 +3,8 @@ import "babel-polyfill";
 
 import axios from "axios";
 
+// postRouter is a function that runs serverside
+// Its core function is to route all post requests passed to it based on the extracted data
 export const postRouter = async (req, res, db, ObjectId) => {
     const { collectionName, id, query, data, options } = req.body
     const collection = db.collection(collectionName)
@@ -127,6 +129,8 @@ export const postRouter = async (req, res, db, ObjectId) => {
     }
 }
 
+
+// query is a function responsible for sending query data to the server 
 export const query = (config = { baseURL: "", headers: {} }) => {
     function http() {
         return axios.create(config)

@@ -42,6 +42,8 @@ client.connect().then(async () => {
 ```
 
 ## client
+This library uses the mongodb Node.js API.
+For more info refer to the mongodb [docs](https://docs.mongodb.com/drivers/node/)
 
 ```javascript
 import {client} from "client-query"
@@ -77,5 +79,48 @@ const getEmployees = async ()=> {
 
 ```
 
-This library uses the mongodb Node.js API.
-For more info refer to the mongodb [docs](https://docs.mongodb.com/drivers/node/)
+## query methods
+
+```javascript
+
+insertOne(collectionName = String, data = Object) // inserts One document in a collection
+
+insertMany(collectionName = String, data = Array) // inserts Many documents in a collection
+
+find(collectionName = String, query = Object) // returns an array of documents in a collection
+
+findOne(collectionName = String, query = Object) // returns a single document from a collection
+
+findById(collectionName = String, id = String) // returns a single document from a collection based on the '_id'
+
+updateMany(collectionName = String, query = Object, data = Object, options = Object) // updates many documents in a collection
+
+updateOne(collectionName = String, query = Object, data = Object, options = Object) // updates a single document in a collection
+
+updateById(collectionName = String, id = String, data = Object, options = Object) // updates a single document in a collection by it's '_id'
+
+deleteMany(collectionName = String, query = Object) // deletes many documents in a collection
+
+deleteOne(collectionName = String, query = Object) // deletes a single document in a collection
+
+deleteById(collectionName = String, id = String) // deletes a single document in a collection by it's '_id'
+
+aggregate(collectionName = String, query = Array) // returns aggregation results
+
+```
+
+## Aggregation Example
+Refer to [mongoDB Docs](https://docs.mongodb.com/manual/reference/method/db.collection.aggregate/) for more info and examples on the aggregation pipeline
+
+```javascript
+
+const getEmployees = async ()=> {
+  return await db().aggregate("employees", [
+                     { $match: { department: "HR" } },
+                     { $group: { _id: "$gender" },
+                     { $sort: { total: -1 } }
+                   ]).toArray()
+},
+
+```
+
